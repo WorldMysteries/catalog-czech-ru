@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог чешской литературы</title>
+<style>
+  :root{
+    --bg:#f6f5f8; --paper:#ffffff; --ink:#1d2030; --muted:#6c6f84;
+    --accent:#c4161c; --blue:#11457e; --line:#e1e0ea; --hero:#0c3260;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#12131a;--paper:#1b1d28;--ink:#eceef6;--muted:#9da1b7;--accent:#ff7b7f;--blue:#7fb0f0;--line:#2d3042;--hero:#071a35;}
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+  header{text-align:center;padding:64px 20px 44px;color:#f5f7fc;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--hero),#11457e)}
+  header::before{content:"";position:absolute;left:0;top:0;bottom:0;width:34%;
+    background:#c4161c;opacity:.22;clip-path:polygon(0 0,0 100%,100% 50%)}
+  header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;
+    background:linear-gradient(90deg,#fff 0 50%,#c4161c 50% 100%)}
+  header h1,header p,.ornament{position:relative}
+  header h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.02em}
+  header h1 span{color:#ff9094}
+  header p{margin:0;color:#cdd8ee;font-style:italic;font-size:1.1rem}
+  .ornament{color:#ff9094;letter-spacing:.6em;margin-top:14px}
+  nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);
+    padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;padding:6px 14px;border:1px solid var(--line);
+    border-radius:999px;font-size:.95rem;transition:.2s;background:var(--paper)}
+  nav a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  #search{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);
+    color:var(--ink);font:inherit;min-width:220px}
+  #search:focus{outline:2px solid var(--blue)}
+  main{max-width:1150px;margin:0 auto;padding:30px 20px 60px}
+  section{margin-top:56px;scroll-margin-top:80px}
+  section h2{font-size:2rem;margin:0 0 6px;display:flex;align-items:center;gap:14px}
+  section h2 .ico{font-size:1.6rem}
+  section h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+  .desc{color:var(--muted);margin:0 0 22px;font-style:italic}
+  .authors{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+  .author{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--blue);
+    border-radius:12px;padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:.25s}
+  .author:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.14);border-top-color:var(--accent)}
+  .author h3{margin:0 0 2px;font-size:1.35rem;color:var(--accent)}
+  .years{font-size:.85rem;color:var(--muted);margin-bottom:10px;display:block}
+  .author ul{list-style:none;margin:0;padding:0}
+  .author li{border-top:1px dashed var(--line)}
+  .author li a{display:block;padding:8px 2px;color:var(--ink);text-decoration:none;transition:.2s}
+  .author li a:hover{color:var(--accent);padding-left:8px}
+  .hidden{display:none!important}
+  #empty{text-align:center;color:var(--muted);margin-top:40px;display:none}
+  footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Каталог <span>чешской литературы</span></h1>
+  <p>Разделы · писатели · произведения</p>
+  <div class="ornament">❦ ❦ ❦</div>
+</header>
+
+<nav>
+  <a href="#romany">Романы</a>
+  <a href="#satira">Сатира и юмор</a>
+  <a href="#drama">Драматургия</a>
+  <a href="#poeziya">Поэзия</a>
+  <a href="#praga">Пражская литература на немецком</a>
+  <a href="#detskaya">Детская литература</a>
+  <input id="search" type="search" placeholder="🔍 Поиск писателя или книги…">
+</nav>
+
+<main>
+
+<section id="romany">
+  <h2><span class="ico">📖</span>Романы</h2>
+  <p class="desc">От национального возрождения до диссидентской прозы.</p>
+  <div class="authors">
+    <article class="author"><h3>Божена Немцова</h3><span class="years">1820 – 1862</span>
+      <ul>
+        <li><a href="babushka/">Бабушка</a></li>
+      </ul></article>
+    <article class="author"><h3>Алоис Ирасек</h3><span class="years">1851 – 1930</span>
+      <ul>
+        <li><a href="psoglavtsy/">Псоглавцы</a></li>
+        <li><a href="starinnye-chekhskie-predaniya/">Старинные чешские предания</a></li>
+      </ul></article>
+    <article class="author"><h3>Карел Чапек</h3><span class="years">1890 – 1938</span>
+      <ul>
+        <li><a href="voyna-s-salamandrami/">Война с саламандрами</a></li>
+        <li><a href="fabrika-absolyuta/">Фабрика Абсолюта</a></li>
+        <li><a href="krakatit/">Кракатит</a></li>
+      </ul></article>
+    <article class="author"><h3>Богумил Грабал</h3><span class="years">1914 – 1997</span>
+      <ul>
+        <li><a href="ya-obsluzhival-angliyskogo-korolya/">Я обслуживал английского короля</a></li>
+        <li><a href="slishkom-shumnoe-odinochestvo/">Слишком шумное одиночество</a></li>
+        <li><a href="strogo-okhranyaemye-poezda/">Строго охраняемые поезда</a></li>
+      </ul></article>
+    <article class="author"><h3>Йозеф Шкворецкий</h3><span class="years">1924 – 2012</span>
+      <ul>
+        <li><a href="trusy/">Трусы</a></li>
+        <li><a href="inzhener-chelovecheskikh-dush/">Инженер человеческих душ</a></li>
+      </ul></article>
+    <article class="author"><h3>Милан Кундера</h3><span class="years">1929 – 2023</span>
+      <ul>
+        <li><a href="shutka/">Шутка</a></li>
+        <li><a href="nevynosimaya-legkost-bytiya/">Невыносимая лёгкость бытия</a></li>
+        <li><a href="bessmertie/">Бессмертие</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<section id="satira">
+  <h2><span class="ico">🎩</span>Сатира и юмор</h2>
+  <p class="desc">Чешский смех: ирония, абсурд и «швейковщина».</p>
+  <div class="authors">
+    <article class="author"><h3>Ярослав Гашек</h3><span class="years">1883 – 1923</span>
+      <ul>
+        <li><a href="pokhozhdeniya-bravogo-soldata-shveyka/">Похождения бравого солдата Швейка</a></li>
+        <li><a href="rasskazy-gasheka/">Рассказы</a></li>
+      </ul></article>
+    <article class="author"><h3>Карел Чапек</h3><span class="years">1890 – 1938</span>
+      <ul>
+        <li><a href="voyna-s-salamandrami/">Война с саламандрами</a></li>
+        <li><a href="fabrika-absolyuta/">Фабрика Абсолюта</a></li>
+      </ul></article>
+    <article class="author"><h3>Милан Кундера</h3><span class="years">1929 – 2023</span>
+      <ul>
+        <li><a href="shutka/">Шутка</a></li>
+        <li><a href="smeshnye-lyubvi/">Смешные любови</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<section id="drama">
+  <h2><span class="ico">🎭</span>Драматургия</h2>
+  <p class="desc">Пьесы, подарившие миру слово «робот», и театр абсурда.</p>
+  <div class="authors">
+    <article class="author"><h3>Карел Чапек</h3><span class="years">1890 – 1938</span>
+      <ul>
+        <li><a href="r-u-r/">R.U.R. (Россумские универсальные роботы)</a></li>
+        <li><a href="belaya-bolezn/">Белая болезнь</a></li>
+        <li><a href="sredstvo-makropulosa/">Средство Макропулоса</a></li>
+        <li><a href="iz-zhizni-nasekomykh/">Из жизни насекомых</a></li>
+      </ul></article>
+    <article class="author"><h3>Милан Кундера</h3><span class="years">1929 – 2023</span>
+      <ul>
+        <li><a href="zhak-i-ego-gospodin/">Жак и его господин</a></li>
+      </ul></article>
+    <article class="author"><h3>Вацлав Гавел</h3><span class="years">1936 – 2011</span>
+      <ul>
+        <li><a href="prazdnik-v-sadu/">Праздник в саду</a></li>
+        <li><a href="audientsiya/">Аудиенция</a></li>
+        <li><a href="largo-dezolato/">Ларго Дезолато</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<section id="poeziya">
+  <h2><span class="ico">🪶</span>Поэзия</h2>
+  <p class="desc">От романтического «Мая» до Нобелевской премии Сейферта.</p>
+  <div class="authors">
+    <article class="author"><h3>Карел Гинек Маха</h3><span class="years">1810 – 1836</span>
+      <ul>
+        <li><a href="may/">Май</a></li>
+        <li><a href="tsygane/">Цыгане</a></li>
+      </ul></article>
+    <article class="author"><h3>Ян Неруда</h3><span class="years">1834 – 1891</span>
+      <ul>
+        <li><a href="kladbishchenskie-tsvety/">Кладбищенские цветы</a></li>
+        <li><a href="malostranskie-povesti/">Малостранские повести</a></li>
+      </ul></article>
+    <article class="author"><h3>Витезслав Незвал</h3><span class="years">1900 – 1958</span>
+      <ul>
+        <li><a href="edison/">Эдисон</a></li>
+        <li><a href="pantomima/">Пантомима</a></li>
+      </ul></article>
+    <article class="author"><h3>Ярослав Сейферт</h3><span class="years">1901 – 1986 · лауреат 1984</span>
+      <ul>
+        <li><a href="chumnoy-stolp/">Чумной столб</a></li>
+        <li><a href="vse-krasoty-mira/">Все красоты мира</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<section id="praga">
+  <h2><span class="ico">🏰</span>Пражская литература на немецком</h2>
+  <p class="desc">Загадочная, мистическая Прага начала XX века.</p>
+  <div class="authors">
+    <article class="author"><h3>Франц Кафка</h3><span class="years">1883 – 1924</span>
+      <ul>
+        <li><a href="protsess/">Процесс</a></li>
+        <li><a href="zamok/">Замок</a></li>
+        <li><a href="prevrashchenie/">Превращение</a></li>
+      </ul></article>
+    <article class="author"><h3>Густав Майринк</h3><span class="years">1868 – 1932</span>
+      <ul>
+        <li><a href="golem/">Голем</a></li>
+        <li><a href="angel-zapadnogo-okna/">Ангел Западного окна</a></li>
+        <li><a href="zelyonyy-lik/">Зелёный лик</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<section id="detskaya">
+  <h2><span class="ico">🧸</span>Детская литература</h2>
+  <p class="desc">Добрые сказки и весёлые истории для самых маленьких.</p>
+  <div class="authors">
+    <article class="author"><h3>Карел Чапек</h3><span class="years">1890 – 1938</span>
+      <ul>
+        <li><a href="devyat-skazok/">Девять сказок и ещё одна как приложение</a></li>
+        <li><a href="dasha-ili-istoriya-shchenka/">Даша, или История щенка</a></li>
+      </ul></article>
+    <article class="author"><h3>Йозеф Лада</h3><span class="years">1887 – 1957</span>
+      <ul>
+        <li><a href="kot-mikesh/">Приключения кота Микеша</a></li>
+      </ul></article>
+  </div>
+</section>
+
+<p id="empty">Ничего не найдено 📚</p>
+</main>
+
+<footer>© Каталог чешской литературы</footer>
+
+<script>
+  const input = document.getElementById('search');
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let total = 0;
+    document.querySelectorAll('section').forEach(sec => {
+      let shown = 0;
+      sec.querySelectorAll('.author').forEach(card => {
+        const authorMatch = card.querySelector('h3').textContent.toLowerCase().includes(q);
+        let any = false;
+        card.querySelectorAll('li').forEach(li => {
+          const ok = !q || authorMatch || li.textContent.toLowerCase().includes(q);
+          li.classList.toggle('hidden', !ok);
+          if (ok) any = true;
+        });
+        card.classList.toggle('hidden', !any);
+        if (any) shown++;
+      });
+      sec.classList.toggle('hidden', shown === 0);
+      total += shown;
+    });
+    document.getElementById('empty').style.display = total ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>
